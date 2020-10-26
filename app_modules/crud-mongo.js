@@ -177,9 +177,9 @@ exports.updateRestaurant = function(id, formData, callback) {
 		var db = client.db(dbName);
 
 		if(!err) {
-			console.log(formData)
+			console.log(formData.address)
             let myquery = { "_id": ObjectId(id)};
-	        let newvalues = { $set: {name: formData.name, cuisine: formData.cuisine, borough: formData.borough, "address.street": formData.address.street, "address.building": formData.address.building, "address.zipcode": formData.address.zipcode, "address.coord": formData.data.address.coord} }
+	        let newvalues = { $set: {name: formData.name, cuisine: formData.cuisine, borough: formData.borough, address: formData.address} }
 
 
 			db.collection("restaurants")
