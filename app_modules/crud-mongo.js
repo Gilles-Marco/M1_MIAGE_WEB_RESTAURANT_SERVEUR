@@ -135,7 +135,10 @@ exports.createRestaurant = function(formData, callback) {
 	 
 			let toInsert = {
 				name : formData.nom, 
-				cuisine : formData.cuisine
+				cuisine : formData.cuisine,
+				borough: formData.borough,
+				address: formData.address,
+				grades: []
 			};
 			console.dir(JSON.stringify(toInsert));
 		    db.collection("restaurants")
